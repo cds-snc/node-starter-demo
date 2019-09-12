@@ -1,39 +1,39 @@
 class FileListPlugin {
   apply(compiler) {
     // emit is asynchronous hook, tapping into it using tapAsync, you can use tapPromise/tap(synchronous) as well
-    compiler.hooks.emit.tapAsync("FileListPlugin", (compilation, callback) => {
+    compiler.hooks.emit.tapAsync('FileListPlugin', (compilation, callback) => {
       // Create a header string for the generated file:
-      let filelist = "{\n";
+      let filelist = '{\n'
 
       // Loop through all compiled assets,
       // adding a new line item for each filename.
-      let i = 0;
+      let i = 0
       for (let filename in compilation.assets) {
-        let chunk = compilation.chunks[i];
+        let chunk = compilation.chunks[i]
 
-        if (chunk && chunk.id) {
-          filelist += `\t"${chunk.id}":"${filename}"` + ",\n";
+        if (chunk && chunk.name) {
+          filelist += `\t"${chunk.name}":"${filename}"` + ',\n'
         }
 
-        i++;
+        i++
       }
 
-      filelist = filelist.replace(/,\s*$/, "\n");
-      filelist += "}";
+      filelist = filelist.replace(/,\s*$/, '\n')
+      filelist += '}'
 
       // Insert this list into the webpack build as a new file asset:
-      compilation.assets["_filelist.json"] = {
+      compilation.assets['_filelist.json'] = {
         source: function() {
-          return filelist;
+          return filelist
         },
         size: function() {
-          return filelist.length;
-        }
-      };
+          return filelist.length
+        },
+      }
 
-      callback();
-    });
+      callback()
+    })
   }
 }
 
-module.exports = FileListPlugin;
+module.exports = FileListPlugin

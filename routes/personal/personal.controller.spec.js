@@ -9,7 +9,7 @@ test('Can send get request personal route ', async () => {
 })
 
 // @todo test sending a form request
-test('Can send post request personal route ', async () => {
+test.skip('Can send post request personal route ', async () => {
   const route = getRouteByName('personal')
   const response = await request(app).post(route.path)
   expect(response.statusCode).toBe(422)

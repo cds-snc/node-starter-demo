@@ -21,7 +21,7 @@ const getClientJs = (req, routeName = '', jsPath = '../public') => {
     }
     */
     const file = json[routeName]
-    const filePath = path.join(__dirname, `../public${clientJsDir}${file}`)
+    const filePath = path.join(__dirname, `${jsPath}${clientJsDir}${file}`)
     const fileExists = fs.readFileSync(filePath)
 
     if (fileExists) {

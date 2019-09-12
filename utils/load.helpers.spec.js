@@ -6,6 +6,8 @@ describe('Can pull JavaScript file', () => {
       body: {},
       headers: { host: 'localhost' },
     }
-    expect(getClientJs(req, 'start')).toEqual("http://localhost/js/dist/start.f1ed5571f87447db4459.js")
+    expect(getClientJs(req, 'start', '../__tests__/fixtures')).toEqual(
+      'http://localhost/js/dist/start.f1ed5571f87447db4451.js',
+    )
   })
 })

@@ -57,5 +57,7 @@
   "chart.intro": "chart.intro",
   "next": "Next",
   "form.expiry": "form.expiry",
-  "form.expiry.desc": "form.expiry.desc"
+  "form.expiry.desc": "form.expiry.desc",
+  "For demo purposes you don't need to fill this out": "For demo purposes you don't need to fill this out",
+  "This is for demo purposes you don't need to fill this out": "This is for demo purposes you don't need to fill this out"
 }

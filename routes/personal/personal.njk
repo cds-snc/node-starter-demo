@@ -1,8 +1,11 @@
 {% extends "base.njk" %}
+{% from 'banner.njk' import banner as banner %}
 
 {% block content %}
 
     <h1>{{ __('personal.title') }}</h1>
+
+    {{ banner('blue', '<p>' + __('This is for demo purposes you don\'t need to fill this out') + '</p>') }}
 
 
     <div>

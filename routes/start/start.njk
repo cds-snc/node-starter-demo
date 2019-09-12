@@ -2,11 +2,56 @@
 {% from 'banner.njk' import banner as banner %}
 
 {% block content %}
-    <h1>{{ __('start.title') }}</h1>
+    
+
+    <h1>Welcome to your benefit application</h1>
 
     {{ banner('blue', '<p>' + __('start.intro.banner') + '</p>') }}
 
-    <div>{{ __('start.intro') | safe }}</div>
+    <p>It usually takes <strong>about 30 minutes to complete</strong> this information online. </p>
+
+    <p>Or call us at <strong>1-888-329-2726 </strong><br>
+    Average wait time right now: 20 minutes.</p>
+
+
+    
+
+    <div><h2>Before you start</h2></div>
+
+    <p>Make sure you have the following details:</p>
+    <ul>
+    <li>Your SIN number</li>
+    <li>Your doctor’s name and contact details</li>
+
+    <li>Information about your diagnosis and treatment</li>
+<li>Current medications and dosages.</li>
+
+    </ul>
+
+    <p><h2>Once you’re finished</h2></p>
+
+    <p><strong>2018 average response time: 2 months </strong><br>
+from receiving an application to making a decision or asking for more information. </p>
+
+<p><strong>We may need more information</strong> from you. In 2018, about 55% of the applications we received needed some kind of follow-up after the initial submission. </p>
+
+<h2>Other people who have applied for this benefit</h2>
+
+
+<p>Right now, about 3 million people are receiving this benefit, for a wide range of conditions, including:</p>
+
+<ul>
+<li>Depression and/or anxiety</li>
+<li>Chronic fatigue syndrome</li>
+<li>Cancer</li>
+<li>Heart conditions</li>
+<li>Injuries and mobility challenges</li>
+</ul>
+
+<p>In 2018, we ultimately approved 65% of the applications we received.</p>
+
+
+
 
     <div>
         <a class="button-link" href="{{ nextRoute }}" role="button" draggable="false">
@@ -15,4 +60,8 @@
         </a>
     </div>
 
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src={{jsPath}}></script>
 {% endblock %}

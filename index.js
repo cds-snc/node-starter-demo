@@ -57,6 +57,8 @@ const getConfig = options => {
       port: 9000
     }
   };
+
+  return config;
 };
 
 module.exports = {
